@@ -5,10 +5,10 @@
   "main": "serverExpress.js",
   "scripts": {
     "start": "node serverExpress.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "engines": {
-          "node": "10.15.1"   
-        }
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "10.12"
   },
   "author": "",
   "license": "ISC",
