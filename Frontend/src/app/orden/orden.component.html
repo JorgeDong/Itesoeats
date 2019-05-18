@@ -1,0 +1,28 @@
+<h1>Ordenes</h1>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <th>id</th>
+      <th>Hora</th>
+      <th>Estatus</th>
+      <!-- <th>Carrito</th> -->
+      <th>Operations</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let orden of productoService.orden">
+        <td>{{ orden.id }}</td>
+        <td>{{ orden.date }}</td>
+        <td>{{ orden.status }}</td>
+        <!-- <td>{{ orden.cart.toString() }}</td> -->
+        <td>
+          <a (click)="editEmployee(employee)">
+            <i>edit</i>
+          </a>
+          <a (click)="deleteEmployee(employee._id, employeeForm)">
+            <i>delete</i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
