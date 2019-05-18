@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Tienda } from './tienda';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from  '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,6 @@ export class TiendaService {
   }
 
   getTiendas2(){
-    return this.http.get('api/tienda');
+    return this.http.get(environment.apiUrl + '/tienda');
   }
 }

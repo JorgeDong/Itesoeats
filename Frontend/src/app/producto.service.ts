@@ -5,6 +5,7 @@ import { Producto } from './producto';
 import { HttpClient } from '@angular/common/http';
 import { ProductoListaComponent } from './productos-main/producto-lista/producto-lista.component';
 import { Orden } from './models/orden';
+import { environment } from '../environments/environment';
 @Injectable({
   providedIn: 'root'
   
@@ -36,7 +37,7 @@ a=-1;
 n="No hay nota";
 cantidad=1;
 newProductId=-1;
- URL_API = "api/ordenes";
+ URL_API = environment.apiUrl + "/ordenes";
 
 constructor(private http: HttpClient ){}
 
@@ -78,7 +79,7 @@ constructor(private http: HttpClient ){}
     
   }*/
   getProductos2(){
-    return this.http.get('api/productos');
+    return this.http.get(environment.apiUrl + '/productos');
   }
 
   setProductos(productos: Producto[]){
@@ -93,7 +94,7 @@ constructor(private http: HttpClient ){}
     }
 
   getProductoById2(id: string){
-    let url='api/tienda/'
+    let url=environment.apiUrl +'/tienda/'
     return this.http.get(url+id);
   }
   getProductos(): Producto[] {
@@ -179,7 +180,7 @@ constructor(private http: HttpClient ){}
     this.notificarCambios();
       console.log(this.tmp.nombre);
       console.log(this.tmp.tiendaId);
-      this.http.delete("api/tienda/"+this.tmp.tiendaId+'/'+ id).subscribe(
+      this.http.delete(environment.apiUrl +"/tienda/"+this.tmp.tiendaId+'/'+ id).subscribe(
         (val) => {
             console.log("Delete call successful value returned in body", 
                         val);
@@ -238,7 +239,7 @@ constructor(private http: HttpClient ){}
     this.productos[objIndex].descripcion = descripcionEditar;
     this.productos[objIndex].precio = precioEditar;
   console.log(this.productos);
-      this.http.patch("api/tienda/"+this.tmp.tiendaId+'/'+ id,
+      this.http.patch(environment.apiUrl +"/tienda/"+this.tmp.tiendaId+'/'+ id,
       {
           "nombre": nombreEditar,
           "descripcion": descripcionEditar,
@@ -260,7 +261,7 @@ constructor(private http: HttpClient ){}
   
     CreateProduct(producto: Producto, id:string){
       this.productos.push(producto);
-      this.http.post("api/tienda/"+id, producto).subscribe(
+      this.http.post(environment.apiUrl +"/tienda/"+id, producto).subscribe(
         producto =>{
           console.log("Funcionó");
           return true;
@@ -293,7 +294,7 @@ changeD(id: number){
   console.log(this.productos);
     console.log(this.tmp.nombre);
     let b= this.tmp.tiendaId;
-    this.http.patch("api/tienda/"+this.tmp.tiendaId+'/'+ id,
+    this.http.patch(environment.apiUrl +"/tienda/"+this.tmp.tiendaId+'/'+ id,
     {
         "disponible": !this.tmp.disponible
     }) .subscribe(
