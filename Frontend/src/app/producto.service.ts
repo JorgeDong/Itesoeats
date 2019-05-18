@@ -346,7 +346,7 @@ changeD(id: number){
 saveOrder(fecha: string){
   console.log('entro al servicio');
   console.log(fecha);
-    const order = new Orden("3",fecha, "true", this.carrito);
+    const order = new Orden("3",fecha, "activa", this.carrito);
     console.log(order);
     console.log(this.URL_API);
     console.log(this.http.post(this.URL_API, order));

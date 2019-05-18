@@ -13,10 +13,10 @@
                 <input type="text" name="name" #name="ngModel" [(ngModel)]="reviewService.selectedReview.name" placeholder="Ingresa tu usuario">
               </div>
               <div class="input-field col-s12">
-                <input type="text" name="rate" #name="ngModel" [(ngModel)]="reviewService.selectedReview.review" value="0" placeholder="evalua el servicio">
+                <input type="text" name="rate" #name="ngModel" [(ngModel)]="reviewService.selectedReview.rate" value="0" placeholder="evalua el servicio">
               </div>
               <div class="input-field col-s12">
-                  <input type="text" name="message" #name="ngModel" [(ngModel)]="reviewService.selectedReview.position" placeholder="Ingresa tu reseña">
+                  <input type="text" name="message" #name="ngModel" [(ngModel)]="reviewService.selectedReview.message" placeholder="Ingresa tu reseña">
                 </div>
               <div class="card-action">
                   <div class="input-field col-s12">
@@ -39,8 +39,8 @@
         <tbody>
           <tr *ngFor="let review of reviewService.reviews">
             <td>{{ review.name }}</td>
-            <td>{{ review.position }}</td>
-            <td>{{ review.office }}</td>
+            <td>{{ review.message }}</td>
+            <td>{{ review.rate }}</td>
             <td>
               <a (click)="editReview(review)">
                 <i class="material-icons">edit</i>

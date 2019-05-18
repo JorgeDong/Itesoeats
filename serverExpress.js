@@ -12,7 +12,7 @@ let {Tienda} = require('./server/models/Tienda');
 
 const app = express();
 const port = process.env.PORT || 3000;
-// app.use(cors({origin: 'http://localhost:4200'}));
+app.use(cors({origin: 'http://localhost:4200'}));
 //let alumnos = JSON.parse(fs.readFileSync('./alumnos.json'));
 
 let jsonParser = bodyParser.json();
@@ -24,7 +24,7 @@ let corsOptions = {
 app.use(express.json());
 // Routes
 app.use('/api/ordenes', require('./server/routes/orders.routes'));
-
+app.use('/api/reviews', require('./server/routes/review.routes'));
 
 
 

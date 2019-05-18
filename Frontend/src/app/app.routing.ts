@@ -12,6 +12,7 @@ import { ProductosMainComponent } from './productos-main/productos-main.componen
 import { TiendaMainComponent } from './tienda-main/tienda-main.component';
 import { TiendaListaComponent } from './tienda-main/tienda-lista/tienda-lista.component';
 import { OrdenComponent } from './orden/orden.component';
+import { ReviewsComponent } from './reviews/reviews.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     },
     {path: 'orden', component: OrdenComponent},
     {path: 'home', component: TiendaMainComponent},
+    {path: 'reviews', component: ReviewsComponent },
     {path: 'productos', component: ProductosMainComponent, children: [
             {path: '', component: ProductoListaComponent},
             {path: ':id', component: ProductoDetalleComponent},

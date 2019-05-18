@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ReviewService } from '../reviews/review.service';
+import { ReviewService } from '../services/review.service';
 import { NgForm } from '@angular/forms';
-import { Review } from '../reviews/review';
+import { Review } from '../models/review';
 
 
 @Component({
@@ -44,11 +44,11 @@ export class ReviewsComponent implements OnInit {
       });
   }
 
-  editreview(review: Review) {
+  editReview(review: Review) {
     this.reviewService.selectedReview = review;
   }
 
-  deleteEmployee(_id: string, form: NgForm) {
+  deleteReview(_id: string, form: NgForm) {
     if(confirm('Are you sure you want to delete it?')) {
       this.reviewService.deleteEmployee(_id)
         .subscribe(res => {

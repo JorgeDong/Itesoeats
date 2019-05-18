@@ -37,6 +37,7 @@ import { TiendaListaComponent } from './tienda-main/tienda-lista/tienda-lista.co
 import { TiendaItemComponent } from './tienda-main/tienda-lista/tienda-item/tienda-item.component';
 import { OrdenesComponent } from './components/ordenes/ordenes.component';
 import { OrdenComponent } from './orden/orden.component';
+import {ReviewsComponent} from './reviews/reviews.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { OrdenComponent } from './orden/orden.component';
         TiendaListaComponent,
         TiendaItemComponent,
         OrdenesComponent,
-        OrdenComponent
+        OrdenComponent,
+        ReviewsComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

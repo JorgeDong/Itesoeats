@@ -1,6 +1,6 @@
-const Review = require('./review');
+const Review = require('../models/review');
 
-const ReviewCtrl = {};
+const reviewCtrl = {};
 
 reviewCtrl.getReviews = async (req, res, next) => {
     const reviews = await Review.find();
@@ -17,7 +17,7 @@ reviewCtrl.createReview= async (req, res, next) => {
     res.json({status: 'Review created'});
 };
 
-reviewCtrl.getReviews = async (req, res, next) => {
+reviewCtrl.getReview = async (req, res, next) => {
     const { id } = req.params;
     const review = await Review.findById(id);
     res.json(review);
